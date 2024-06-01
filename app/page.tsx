@@ -6,7 +6,9 @@ export const metadata = {
 }
 
 const getRooms = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/rooms`)
+  const res = await fetch(`${process.env.API_URL}/api/rooms`, {
+    cache: 'no-cache',
+  })
   return res.json()
 }
 

@@ -48,8 +48,6 @@ export const getRoomDetails = catchAsyncErrors(
   async (req: NextRequest, { params }: { params: { id: string } }) => {
     const room = await Room.findById(params.id)
 
-    throw new ErrorHandler('Hello yall', 400)
-
     if (!room) {
       return NextResponse.json(
         {
