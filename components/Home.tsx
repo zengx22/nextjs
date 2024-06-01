@@ -3,6 +3,7 @@ import React from 'react'
 import RoomItem from './room/RoomItem'
 import { IRoom } from '@/backend/models/room'
 import CustomPagination from './layout/CustomPagination'
+import { useSearchParams } from 'next/navigation'
 
 interface Props {
   data: {
@@ -13,11 +14,17 @@ interface Props {
   }
 }
 const Home = ({ data }: Props) => {
+  const searchParams = useSearchParams()
+  const location = searchParams.get('location')
   const { rooms, resPerPage, filteredRoomsCount } = data
   return (
     <div>
       <section id='rooms' className='container mt-5'>
-        <h2 className='mb-3 ml-2 stays-heading'>All Rooms</h2>
+        <h2 className='mb-3 ml-2 stays-heading'>
+          {location
+            ? `${rooms?.length} rooms found in ${location}`
+            : 'All Rooms'}
+        </h2>
         <a href='/search' className='ml-2 back-to-search'>
           <i className='fa fa-arrow-left'></i> Back to Search
         </a>

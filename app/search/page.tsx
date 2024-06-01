@@ -1,8 +1,12 @@
 import Search from '@/components/Search'
 import React from 'react'
 
-const page = () => {
+export const metadata = {
+  title: 'SearchPage - BookIT',
+}
+
+const SearchPage = () => {
   return <Search />
 }
 
-export default page
+export default SearchPage
