@@ -1,5 +1,4 @@
 import { useSearchParams, useRouter } from 'next/navigation'
-import {} from 'next/router'
 import React from 'react'
 import Pagination from 'react-js-pagination'
 
