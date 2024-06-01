@@ -26,7 +26,7 @@ const Home = ({ data }: Props) => {
             : 'All Rooms'}
         </h2>
         <a href='/search' className='ml-2 back-to-search'>
-          <i className='fa fa-arrow-left'></i> Back to Search
+          <i className='fa fa-arrow-left me-1'></i> Back to Search
         </a>
         <div className='row mt-4'>
           {rooms?.length === 0 ? (
