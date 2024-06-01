@@ -3,11 +3,11 @@
 import { IRoom } from '@/backend/models/room'
 import React from 'react'
 import StarRatings from 'react-star-ratings'
-// import RoomImageSlider from './RoomImageSlider'
-// import RoomFeatures from './RoomFeatures'
-// import BookingDatePicker from './BookingDatePicker'
-// import ListReviews from '../review/ListReviews'
-// import NewReview from '../review/NewReview'
+import RoomImageSlider from './RoomImageSlider'
+import RoomFeatures from './RoomFeatures'
+import BookingDatePicker from './BookingDatePicker'
+import ListReviews from '../review/ListReviews'
+import NewReview from '../review/NewReview'
 
 interface Props {
   data: {
@@ -34,7 +34,7 @@ const RoomDetails = ({ data }: Props) => {
         />
         <span className='no-of-reviews'>({room?.numOfReviews} Reviews)</span>
       </div>
-      {/* <RoomImageSlider images={room?.images} />
+      <RoomImageSlider images={room?.images} />
 
       <div className='row my-5'>
         <div className='col-12 col-md-6 col-lg-8'>
@@ -51,7 +51,7 @@ const RoomDetails = ({ data }: Props) => {
       </div>
 
       <NewReview />
-      <ListReviews /> */}
+      <ListReviews />
     </div>
   )
 }

@@ -28,6 +28,7 @@ export interface IRoom extends Document {
   address: string
   location: ILocation
   guestCapacity: number
+  numOfBeds: number
   isInternet: boolean
   isBreakfast: boolean
   isAirConditioned: boolean
