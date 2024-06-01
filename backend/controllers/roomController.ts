@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Room, { IRoom } from '../models/room'
-import ErrorHandler from '../utils/errorHandler'
+
 import { catchAsyncErrors } from '../middlewares/catchAsyncErrors'
 import APIFilters from '../utils/apiFilters'
 
 export const allRooms = async (req: NextRequest) => {
-  const resPerPage: number = 8
+  const resPerPage: number = 4
 
   const { searchParams } = new URL(req.url)
 
