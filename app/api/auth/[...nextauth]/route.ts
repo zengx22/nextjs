@@ -40,13 +40,13 @@ async function auth(req: NextApiRequest, res: NextApiResponse) {
       jwt: async ({ token, user }) => {
         user && (token.user = user)
 
-        console.log('token =>', token)
-        console.log('user =>', user)
         return token
       },
       session: async ({ session, token }) => {
         session.user = token.user as IUser
-        console.log('session =>', session)
+        //@ts-ignore
+        delete session?.user?.password
+
         return session
       },
     },
