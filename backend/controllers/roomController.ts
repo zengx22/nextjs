@@ -3,6 +3,7 @@ import Room, { IRoom } from '../models/room'
 
 import { catchAsyncErrors } from '../middlewares/catchAsyncErrors'
 import APIFilters from '../utils/apiFilters'
+import ErrorHandler from '../utils/errorHandler'
 
 export const allRooms = async (req: NextRequest) => {
   const resPerPage: number = 4

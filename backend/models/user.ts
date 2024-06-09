@@ -13,6 +13,7 @@ export interface IUser extends Document {
   createdAt: Date
   resetPasswordToken: string
   resetPasswordExpire: Date
+  comparePassword(enteredPassword: string): Promise<boolean>
 }
 
 const userSchema: Schema = new Schema<IUser>({
@@ -53,5 +54,13 @@ userSchema.pre('save', async function (next) {
   }
   this.password = await bcrypt.hash(this.password, 10)
 })
+
+// Compare passwords
+userSchema.methods.comparePassword = async function (
+  enteredPassword: string,
+  Promise: boolean
+) {
+  return await bcrypt.compare(enteredPassword, this.password)
+}
 
 export default mongoose.models.User || mongoose.model<IUser>('User', userSchema)
