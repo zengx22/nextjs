@@ -63,6 +63,10 @@ async function auth(req: NextApiRequest, res: NextApiResponse) {
       },
     },
 
+    pages: {
+      signIn: '/login',
+    },
+
     secret: process.env.NEXTAUTH_SECRET,
   })
 }
