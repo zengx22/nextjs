@@ -23,6 +23,12 @@ export const catchAsyncErrors =
         error.statusCode = 400
       }
 
+      if (error.code === 11000) {
+        error.message = `This ${Object.keys(
+          error.keyValue
+        )} has been used before`
+      }
+
       return NextResponse.json(
         {
           errMessage: error.message,
