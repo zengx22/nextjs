@@ -1,9 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
 const UserSidebar = () => {
+  const pathname = usePathname()
+
   const menuItem = [
     {
       name: 'Update Profile',
@@ -22,7 +25,7 @@ const UserSidebar = () => {
     },
   ]
 
-  const [activeMenuItem, setActivteMenuItem] = useState('menuItem[0].name')
+  const [activeMenuItem, setActivteMenuItem] = useState(pathname)
 
   const handleMenuItemClick = (menuItem: string) => {
     setActivteMenuItem(menuItem)
