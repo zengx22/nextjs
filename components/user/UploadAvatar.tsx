@@ -52,8 +52,6 @@ const UploadAvatar = () => {
 
     const userData = { avatar }
 
-    console.log(userData)
-
     uploadAvatar(userData)
   }
 
