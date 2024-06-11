@@ -1,6 +1,6 @@
 'use client'
 
-import { useUpdatePasswordMutation } from '@/redux/features/api/userApi'
+import { useUpdatePasswordMutation } from '@/redux/api/userApi'
 import React, { useEffect, useState } from 'react'
 import ButtonLoader from '../layout/ButtonLoader'
 import toast from 'react-hot-toast'

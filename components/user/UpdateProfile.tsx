@@ -5,7 +5,7 @@ import ButtonLoader from '../layout/ButtonLoader'
 import {
   useLazyUpdateSessionQuery,
   useUpdateProfileMutation,
-} from '@/redux/features/api/userApi'
+} from '@/redux/api/userApi'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { setUser } from '@/redux/features/userSlice'

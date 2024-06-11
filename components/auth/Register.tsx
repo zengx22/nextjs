@@ -1,6 +1,6 @@
 'use client'
 
-import { useRegisterMutation } from '../../redux/features/api/authApi'
+import { useRegisterMutation } from '../../redux/api/authApi'
 import { useRouter } from 'next/navigation'
 import React, {
   ChangeEventHandler,
