@@ -3,7 +3,7 @@ import {
   deleteRoom,
   getRoomDetails,
   updateRoomDetails,
-} from '@/backend/controllers/roomController'
+} from '@/backend/controllers/roomControllers'
 import { createEdgeRouter } from 'next-connect'
 import { NextRequest } from 'next/server'
 

@@ -1,5 +1,5 @@
 import dbConnect from '@/backend/config/dbConnect'
-import { updatePassword } from '@/backend/controllers/authController'
+import { updatePassword } from '@/backend/controllers/authControllers'
 import { isAuthenticatedUser } from '@/backend/middlewares/auth'
 import { createEdgeRouter } from 'next-connect'
 import { NextRequest } from 'next/server'

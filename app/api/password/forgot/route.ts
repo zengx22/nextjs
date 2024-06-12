@@ -1,5 +1,5 @@
 import dbConnect from '@/backend/config/dbConnect'
-import { registerUser } from '@/backend/controllers/authControllers'
+import { forgotPassword } from '@/backend/controllers/authControllers'
 import { createEdgeRouter } from 'next-connect'
 import { NextRequest } from 'next/server'
 
@@ -9,8 +9,8 @@ const router = createEdgeRouter<NextRequest, RequestContext>()
 
 dbConnect()
 
-router.post(registerUser)
+router.post(forgotPassword)
 
-export async function POST(req: NextRequest, ctx: RequestContext) {
-  return router.run(req, ctx)
+export async function POST(request: NextRequest, ctx: RequestContext) {
+  return router.run(request, ctx)
 }

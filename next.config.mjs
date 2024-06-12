@@ -12,7 +12,7 @@ const nextConfig = {
     SMTP_HOST: 'sandbox.smtp.mailtrap.io',
     SMTP_PORT: 2525,
     SMTP_USER: 'e971b82179c80d',
-    SMTP_PASSWORD: '********cb0b',
+    SMTP_PASSWORD: 'd7b3ef3fedcb0b',
     SMTP_FROM_EMAIL: 'noreply@bookit.com',
     SMTP_FROM_NAME: 'BookIt',
 

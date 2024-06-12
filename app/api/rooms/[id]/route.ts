@@ -2,7 +2,7 @@ import dbConnect from '@/backend/config/dbConnect'
 import {
   getRoomDetails,
   updateRoomDetails,
-} from '@/backend/controllers/roomController'
+} from '@/backend/controllers/roomControllers'
 import { createEdgeRouter } from 'next-connect'
 import { NextRequest } from 'next/server'
 
