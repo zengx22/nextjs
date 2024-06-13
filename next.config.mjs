@@ -10,11 +10,14 @@ const nextConfig = {
     CLOUDINARY_API_SECRET: 'VGsJnCuYdu7_9dSJlZR9wWQnd3Y',
 
     SMTP_HOST: 'sandbox.smtp.mailtrap.io',
-    SMTP_PORT: 2525,
+    SMTP_PORT: '2525',
     SMTP_USER: 'e971b82179c80d',
     SMTP_PASSWORD: 'd7b3ef3fedcb0b',
     SMTP_FROM_EMAIL: 'noreply@bookit.com',
     SMTP_FROM_NAME: 'BookIt',
+
+    GEOCODER_API_KEY: 'e67pEpZ6y4sLWPGy3dUAN3Mvv52SBuMk',
+    GEOCODER_PROVIDER: 'mapquest',
 
     NEXTAUTH_URL: 'http://localhost:3000',
     NEXTAUTH_SECRET: 'HDTHFDHRJHNFBDSEFWTHHFBDF?',
