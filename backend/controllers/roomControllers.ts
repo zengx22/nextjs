@@ -66,7 +66,7 @@ export const getRoomDetails = catchAsyncErrors(
 )
 
 // Update room details
-export const updateRoomDetails = catchAsyncErrors(
+export const updateRoom = catchAsyncErrors(
   async (req: NextRequest, { params }: { params: { id: string } }) => {
     let room = await Room.findById(params.id)
     const body = await req.json()
