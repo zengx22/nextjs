@@ -44,7 +44,7 @@ export interface IRoom extends Document {
   createdAt: Date
 }
 
-const roomSchema: Schema = new Schema<IRoom>({
+const roomSchema: Schema<IRoom> = new Schema({
   name: {
     type: String,
     required: [true, 'Please enter room name'],
@@ -53,7 +53,7 @@ const roomSchema: Schema = new Schema<IRoom>({
   },
   description: {
     type: String,
-    required: [true, 'Please enter room name'],
+    required: [true, 'Please enter room description'],
   },
   pricePerNight: {
     type: Number,
@@ -164,19 +164,19 @@ const roomSchema: Schema = new Schema<IRoom>({
 })
 
 // Setting up location
-// roomSchema.pre('save', async (next) => {
-//   const loc = geoCoder.geocode(this.address)
+roomSchema.pre('save', async function (next) {
+  const loc = await geoCoder.geocode(this.address)
 
-//   console.log('Location', loc)
-//   this.location = {
-//     type: 'point',
-//     coordinates: [loc[0].logitude, loc[0].latitude],
-//     formattedAddress: loc[0].formattedAddress,
-//     city: loc[0].city,
-//     state: loc[0].stateCode,
-//     zipCode: loc[0].zipcode,
-//     country: loc[0].countryCode,
-//   }
-// })
+  console.log('Location', loc)
+  this.location = {
+    type: 'Point',
+    coordinates: [loc[0].longitude, loc[0].latitude],
+    formattedAddress: loc[0].formattedAddress,
+    city: loc[0].city,
+    state: loc[0].stateCode,
+    zipCode: loc[0].zipcode,
+    country: loc[0].countryCode,
+  }
+})
 
 export default mongoose.models.Room || mongoose.model<IRoom>('Room', roomSchema)
