@@ -165,6 +165,7 @@ const roomSchema: Schema<IRoom> = new Schema({
 
 // Setting up location
 roomSchema.pre('save', async function (next) {
+  console.log(this.address)
   const loc = await geoCoder.geocode(this.address)
 
   console.log('Location', loc)
