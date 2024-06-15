@@ -19,6 +19,9 @@ const nextConfig = {
     GEOCODER_API_KEY: 'e67pEpZ6y4sLWPGy3dUAN3Mvv52SBuMk',
     GEOCODER_PROVIDER: 'mapquest',
 
+    MAPBOX_ACCESS_TOKEN:
+      'pk.eyJ1IjoiemVuZ3gyMiIsImEiOiJjbHhmOTlodHMwb3R4Mmtwcjh6ZTRuOWJ4In0.wx3JCpzDNwPdBOf3TkDHUg',
+
     NEXTAUTH_URL: 'http://localhost:3000',
     NEXTAUTH_SECRET: 'HDTHFDHRJHNFBDSEFWTHHFBDF?',
   },
