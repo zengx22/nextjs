@@ -26,8 +26,6 @@ const RoomDetails = ({ data }: Props) => {
     const setMap = async () => {
       const coordinates = room?.location?.coordinates
 
-      console.log('Map coordinates', coordinates)
-
       const map = new mapboxgl.Map({
         container: 'room-map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -35,11 +33,11 @@ const RoomDetails = ({ data }: Props) => {
         zoom: 12,
       })
 
-      // Add maker to the map
+      // Add marker to the map
       new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
-
-      setMap()
     }
+
+    setMap()
   }, [])
 
   return (
