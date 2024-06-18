@@ -1,5 +1,7 @@
 'use client'
 import { IRoom } from '@/backend/models/room'
+import { calculateDaysOfStay } from '@/helpers/helpers'
+import { useNewBookingMutation } from '@/redux/api/bookingApi'
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 
@@ -12,6 +14,9 @@ interface Props {
 const BookingDatePicker = ({ room }: Props) => {
   const [checkInDate, setCheckInDate] = useState(new Date())
   const [checkOutDate, setCheckOutDate] = useState(new Date())
+  const [daysOfStay, setdaysOfStay] = useState(0)
+
+  const [newBooking] = useNewBookingMutation()
 
   const onChange = (dates: Date[]) => {
     const [checkInDate, checkOutDate] = dates
@@ -20,9 +25,26 @@ const BookingDatePicker = ({ room }: Props) => {
     setCheckOutDate(checkOutDate)
 
     if (checkInDate && checkOutDate) {
-      console.log(checkInDate)
-      console.log(checkOutDate)
+      const days = calculateDaysOfStay(checkInDate, checkOutDate)
+
+      setdaysOfStay(days)
     }
+  }
+
+  const bookRoom = () => {
+    const bookingData = {
+      room: room?._id,
+      checkInDate,
+      checkOutDate,
+      daysOfStay,
+      amountPaid: room.pricePerNight * daysOfStay,
+      paymentInfo: {
+        id: 'STRIPE_ID',
+        status: 'PAID',
+      },
+    }
+
+    newBooking(bookingData)
   }
 
   return (
@@ -44,6 +66,10 @@ const BookingDatePicker = ({ room }: Props) => {
         selectsRange
         inline
       />
+
+      <button className='btn py-3 form-btn w-100' onClick={bookRoom}>
+        Pay
+      </button>
     </div>
   )
 }
