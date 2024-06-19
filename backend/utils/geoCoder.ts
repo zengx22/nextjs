@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 const NodeGeocoder = require('node-geocoder')
 
 const options = {
